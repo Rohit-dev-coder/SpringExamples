@@ -1,0 +1,63 @@
+cat > .gitignore << EOF
+# === Java ===
+*.class
+*.log
+*.tmp
+*.swp
+*.bak
+*.orig
+*.rej
+*.DS_Store
+
+# === Package Files ===
+*.jar
+*.war
+*.ear
+
+# === Maven ===
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# === Gradle ===
+build/
+.gradle/
+!gradle/wrapper/gradle-wrapper.jar
+
+# === IntelliJ IDEA ===
+.idea/
+*.iml
+*.iws
+out/
+
+# === Eclipse ===
+.project
+.classpath
+.settings/
+
+# === VSCode ===
+.vscode/
+
+# === OS Specific ===
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# === Logs ===
+*.log
+logs/
+**/logs/
+
+# === Coverage / Testing Reports ===
+.coverage
+coverage/
+*.exec
+*.ec
+*.coverage*
+jacoco.exec
+test-output/
+
+# === Generated docs ===
+/doc/api/
+EOF
+
