@@ -20,6 +20,9 @@
     <bean class="org.springtest.beans.Student" id="stdObj2" name="stdObj2">
         <property name ="name" value="Ravi" />
         <property name="rollNo" value="30" />
+        <constructor-arg>
+            <value>NIT</value>
+        </constructor-arg>
     </bean>
 
     <bean class="org.springtest.beans.Laptop" id="lpObj">

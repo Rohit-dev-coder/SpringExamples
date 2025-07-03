@@ -4,11 +4,18 @@ public class Student {
     private String name;
     private int rollNo;
     private String [] subjects;
+    private String collegeName;
 
 
     public Student() {
         super();
         System.out.println("Creating Student Object...");
+    }
+
+    public Student(String collegeName){
+        super();
+        this.collegeName = collegeName;
+        System.out.println("Creating Student Object with College Name: " + collegeName);
     }
 
     public int getRollNo() {
@@ -35,4 +42,5 @@ public class Student {
     public void setSubjects(String[] subjects) {
         this.subjects = subjects;
     }
+
 }
