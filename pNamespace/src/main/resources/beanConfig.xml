@@ -2,7 +2,8 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation=" http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd">
+       http://www.springframework.org/schema/beans/spring-beans.xsd"
+        xmlns:p="http://www.springframework.org/schema/p">
 
 
     <!--    <bean class="org.springtest.beans.Address" id="addrObj">-->
@@ -11,9 +12,9 @@
     <!--        <constructor-arg type="java.lang.String" value="Bhopal"/>-->
     <!--    </bean>-->
 
-    <bean class="org.springtest.beans.Student" name="stdObj">
-        <property name="name" value="John Doe"/>
-        <property name="age" value="20"/>
-    </bean>
+    <bean class="org.springtest.beans.Student" name="stdObj" p:name="Rohit" p:age="20" />
 
+    <bean class="org.springtest.beans.Address" name="addrObj" p:street="123 Main St" p:zipCode="123" p:city="Bhopal"/>
+
+    <bean class="org.springtest.beans.Student" name="stdObj2" p:name="Rohit2" p:age="21" p:address-ref="addrObj"/>
 </beans>

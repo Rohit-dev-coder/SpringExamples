@@ -2,8 +2,9 @@ package org.springtest.beans;
 
 public class Student {
 
-    String name;
-    int age;
+    private String name;
+    private int age;
+    private Address address;
 
     public Student() {
         // Default constructor
@@ -26,5 +27,13 @@ public class Student {
     }
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }
