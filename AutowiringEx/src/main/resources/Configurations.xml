@@ -28,4 +28,7 @@
     <bean class="org.springtest.beans.Address" p:street="123 Main St" p:state="MP" p:city="Indore" id="addrObj"/>
     <bean class="org.springtest.beans.Customer" p:name="Bob Brown" id="cus4" autowire="constructor" />
 
+    <bean class="org.springtest.beans.Student" c:_0="Alice" c:_1="20" id="student1"
+            init-method="study" destroy-method="backpack"/>
+
 </beans>
