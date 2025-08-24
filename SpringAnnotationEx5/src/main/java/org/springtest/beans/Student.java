@@ -3,16 +3,26 @@ package org.springtest.beans;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import java.util.Map;
+
 @Component
 public class Student {
-    @Value("Julia")
+
+    @Value("${student.name}")
     private String name;
-    @Value("27")
+    @Value("${student.age}")
     private int age;
+    @Value("${student.address:Unknown}")
+    private String address;
+
+    @Value("${student.subjects}")
+    private String[] subjects;
+
+    @Value("#{${student.scores}}")
+    private Map<String, Integer> scores;
 
     public Student() {
     }
-
 
     public Student(String name, int age) {
         this.name = name;
@@ -23,10 +33,8 @@ public class Student {
         return name;
     }
 
-    @Value("John")
     public void setName(String name) {
         this.name = name;
-        System.out.println("setName called with: " + name);
     }
 
     public int getAge() {
@@ -37,18 +45,15 @@ public class Student {
         this.age = age;
     }
 
-    @Value("John2")
-    public void setDetails(String name, @Value("2") int age) {
-        this.name = name;
-        this.age = age;
-        System.out.println("setDetails called with: " + name + ", age: " + age);
-    }
-
     @Override
     public String toString() {
         return "Student{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
+                ", address='" + address + '\'' +
+                ", subjects=" + String.join(", ", subjects) +
+                ", scores=" + scores +
                 '}';
     }
+
 }
