@@ -42,10 +42,12 @@ public class SpringjdbcEx1Application {
 
         int roll = kb.nextInt();
         String name = service.findById(roll);
+        Student std = service.findStudentById(roll);
         if (name == null) {
             System.out.println("No record found!");
         } else {
             System.out.println("Name is " + name);
+            System.out.println("Student is " + std);
         }
     }
 }

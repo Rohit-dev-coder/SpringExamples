@@ -1,0 +1,9 @@
+insert into Students values(1, 'Alice', 85.5);
+insert into Students values(2, 'Bob', 90.0);
+insert into Students values(3, 'Charlie', 78.0);
+insert into Students values(4, 'David', 92.5);
+insert into Students values(5, 'Eve', 88.0);
+insert into Students values(6, 'Frank', 75.5);
+insert into Students values(7, 'Grace', 95.0);
+insert into Students values(8, 'Heidi', 80.0);
+insert into Students values(9, 'Ivan', 82.5);

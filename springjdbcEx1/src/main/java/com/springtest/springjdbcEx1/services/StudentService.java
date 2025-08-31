@@ -26,4 +26,7 @@ public class StudentService {
         return repo.findById(roll);
     }
 
+    public Student findStudentById(int roll) {
+        return repo.findStudentById(roll);
+    }
 }

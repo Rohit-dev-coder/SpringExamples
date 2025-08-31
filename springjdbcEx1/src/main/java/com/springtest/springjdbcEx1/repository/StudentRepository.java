@@ -48,4 +48,20 @@ public class StudentRepository {
         }
     }
 
+    public Student findStudentById(int roll){
+        Student s = null;
+        String sql = "Select * from Students where roll=?";
+        try {
+            s = jdbcTemplate.queryForObject(sql, (rs, rowNum) -> new Student(
+                    rs.getInt("roll"),
+                    rs.getString("name"),
+                    rs.getDouble("per")
+            ), roll);
+        } catch (EmptyResultDataAccessException ex) {
+            s = null;
+        } finally {
+            return s;
+        }
+    }
+
 }
