@@ -49,5 +49,8 @@ public class SpringjdbcEx1Application {
             System.out.println("Name is " + name);
             System.out.println("Student is " + std);
         }
+        service.deleteAllStudents();
+        service.findById(2);
+
     }
 }

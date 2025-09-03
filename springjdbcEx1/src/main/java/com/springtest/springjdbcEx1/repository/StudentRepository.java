@@ -42,6 +42,7 @@ public class StudentRepository {
         try {
             name = jdbcTemplate.queryForObject(sql, String.class, roll);
         } catch (EmptyResultDataAccessException ex) {
+            System.out.println("No record found!");
             name = null;
         } finally {
             return name;
@@ -62,6 +63,12 @@ public class StudentRepository {
         } finally {
             return s;
         }
+    }
+
+    public void deleteAll(){
+        String sql = "Delete from Students";
+        int count = jdbcTemplate.update(sql);
+        System.out.println("rec deleted:" + count);
     }
 
 }

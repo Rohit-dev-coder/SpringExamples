@@ -29,4 +29,8 @@ public class StudentService {
     public Student findStudentById(int roll) {
         return repo.findStudentById(roll);
     }
+
+    public void deleteAllStudents() {
+        repo.deleteAll();
+    }
 }
