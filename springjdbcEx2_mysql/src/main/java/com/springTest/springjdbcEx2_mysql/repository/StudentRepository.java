@@ -5,9 +5,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public class StudentRepository {
@@ -31,6 +34,17 @@ public class StudentRepository {
         String sql = "Insert into Students values(?,?,?)";
         int count = jdbcTemplate.update(sql, s.getRoll(), s.getName(), s.getPer());
         System.out.println("rec inserted:" + count);
+    }
+
+    public void saveUsingNamedParameters(Student s) {
+        String sql = "Insert into Students values(:roll, :name, :per)";
+         NamedParameterJdbcTemplate namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(jdbcTemplate);
+         Map<String, Object> paramMap = new HashMap<>();
+         paramMap.put("roll", s.getRoll());
+         paramMap.put("name", s.getName());
+         paramMap.put("per", s.getPer());
+         int count = namedParameterJdbcTemplate.update(sql, paramMap);
+         System.out.println("rec inserted:" + count);
     }
 
     public int getCount() {
