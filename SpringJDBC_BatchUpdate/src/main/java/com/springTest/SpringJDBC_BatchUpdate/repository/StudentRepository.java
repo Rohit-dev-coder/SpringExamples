@@ -3,6 +3,8 @@ package com.springTest.SpringJDBC_BatchUpdate.repository;
 import com.springTest.SpringJDBC_BatchUpdate.models.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -11,11 +13,19 @@ import java.util.List;
 public class StudentRepository {
 
     private JdbcTemplate jdbcTemplate;
+    private NamedParameterJdbcTemplate nmTemp;
 
     @Autowired
     public StudentRepository(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
+
     }
+
+    @Autowired
+    public StudentRepository(NamedParameterJdbcTemplate nmTemp) {
+        this.nmTemp = nmTemp;
+    }
+
 
     public void save() {
         String sql1 = "Insert into Students values(1001,'Ravi',67.8)";
@@ -36,6 +46,21 @@ public class StudentRepository {
         return results;
     }
 
+//    public int[] save(List<Student>studentList) {
+//        String sql="Insert into Students values(:roll,:name,:per)";
+//        MapSqlParameterSource[] batch = new
+//                MapSqlParameterSource[studentList.size()];
+//        for(int i=0;i<studentList.size();i++) {
+//            MapSqlParameterSource obj=new MapSqlParameterSource();
+//            Student st=studentList.get(i);
+//            obj.addValue("roll", st.getRoll());
+//            obj.addValue("name", st.getName());
+//            obj.addValue("per", st.getPer());
+//            batch[i]=obj;
+//        }
+//        int[]results=nmTemp.batchUpdate(sql, batch);
+//        return results;
+//    }
 
     public int rollNumExist(int roll) {
         String sql="Select count(*) from Students where roll=?";
