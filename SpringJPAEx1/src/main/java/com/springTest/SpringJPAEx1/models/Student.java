@@ -1,15 +1,16 @@
 package com.springTest.SpringJPAEx1.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
-@Table (name = "student1")
+@Table (name = "student1", uniqueConstraints = {
+        @UniqueConstraint(name = "name_uc", columnNames = "name")
+})
 public class Student {
     @Id
     private int roll;
     private String name;
+    @Column(name = "percentage", nullable = false)
     private double per;
 
     public Student() {
