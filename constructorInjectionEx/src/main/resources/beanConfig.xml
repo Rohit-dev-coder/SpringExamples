@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation=" http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<!--    <bean class="org.springtest.beans.Address" id="addrObj">-->
+<!--        <constructor-arg type="java.lang.String" value="123 Main St"/>-->
+<!--        <constructor-arg type="java.lang.String" value="Locality"/>-->
+<!--        <constructor-arg type="java.lang.String" value="Bhopal"/>-->
+<!--    </bean>-->
+
+    <bean class="org.springtest.beans.Student" name="stdObj">
+        <constructor-arg type="int" value="101"/>
+        <constructor-arg type="java.lang.String" value="John Doe"/>
+        <constructor-arg type="org.springtest.beans.Address">
+            <bean class="org.springtest.beans.Address" id="addrObj">
+                <constructor-arg type="java.lang.String" value="123 Main St"/>
+                <constructor-arg type="java.lang.String" value="Locality"/>
+                <constructor-arg type="java.lang.String" value="Bhopal"/>
+            </bean>
+        </constructor-arg>
+
+    </bean>
+
+</beans>

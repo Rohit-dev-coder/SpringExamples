@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation=" http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean class="org.springtest.beans.Student" id="stdObj">
+        <property name ="name" value="Amit" />
+        <property name="rollNo" value="20" />
+        <property name="subjects">
+                <array>
+                    <value>Maths</value>
+                    <value>Physics</value>
+                    <value>Chemistry</value>
+                </array>
+        </property>
+    </bean>
+
+    <bean class="org.springtest.beans.Student" id="stdObj2" name="stdObj2">
+        <property name ="name" value="Ravi" />
+        <property name="rollNo" value="30" />
+        <constructor-arg>
+            <value>NIT</value>
+        </constructor-arg>
+    </bean>
+
+    <bean class="org.springtest.beans.Laptop" id="lpObj">
+        <property name ="brand" value="Apple" />
+    </bean>
+
+    <bean class="org.springtest.beans.Desktop" id="dkObj">
+        <property name ="brand" value="Dell" />
+    </bean>
+
+    <bean class="org.springtest.beans.Programmer" id="progObj">
+        <property name="name" value="Rohit" />
+        <property name="computer" ref="lpObj" />
+    </bean>
+
+
+
+</beans>
