@@ -1,4 +1,4 @@
-package com.springTest.SpringDataJPAEx1.Models;
+package com.springTest.SpringDataJPAEx1.models;
 
 import jakarta.persistence.*;
 

@@ -1,13 +1,11 @@
 package com.springTest.SpringDataJPAEx1;
 
-import com.springTest.SpringDataJPAEx1.Models.Student;
-import com.springTest.SpringDataJPAEx1.Service.StudentService;
+import com.springTest.SpringDataJPAEx1.models.Student;
+import com.springTest.SpringDataJPAEx1.service.StudentService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 @SpringBootApplication

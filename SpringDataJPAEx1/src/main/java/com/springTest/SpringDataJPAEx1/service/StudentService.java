@@ -1,7 +1,7 @@
-package com.springTest.SpringDataJPAEx1.Service;
+package com.springTest.SpringDataJPAEx1.service;
 
-import com.springTest.SpringDataJPAEx1.Models.Student;
-import com.springTest.SpringDataJPAEx1.Repository.StudentRepository;
+import com.springTest.SpringDataJPAEx1.models.Student;
+import com.springTest.SpringDataJPAEx1.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
